@@ -23,8 +23,9 @@ RUN yum clean all ;
 # Software Website:     ..
 # Description:          CONDA
 ##############################################################
-RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-RUN bash Miniconda3-latest-Linux-x86_64.sh -b -f
+RUN wget http://repo.continuum.io/miniconda/Miniconda3-3.7.0-Linux-x86_64.sh -O ~/miniconda.sh
+RUN bash ~/miniconda.sh -b -f -p $HOME/miniconda
+RUN export PATH="$HOME/miniconda/bin:$PATH"
 ##############################################################
 # Dockerfile Version:   1.0
 # Software:             BIG DATA SCRIPT
